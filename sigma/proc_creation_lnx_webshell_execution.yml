@@ -1,4 +1,3 @@
-```
 title: Process Execution From Root Web Directory
 id: 3b3d279e-a97a-4c5c-8be0-64b21ead5fa1
 description: Detects processes where the executable or image path contains common web root directories to identify potential webshells.
@@ -25,4 +24,3 @@ fields:
 falsepositives:
     - System administrators or developers running scripts or commands within web directories for legitimate purposes or as part of an applications functionality.
 level: medium
-```
