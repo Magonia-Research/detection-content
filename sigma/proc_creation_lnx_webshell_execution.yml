@@ -1,26 +1,53 @@
-title: Process Execution From Root Web Directory
-id: 3b3d279e-a97a-4c5c-8be0-64b21ead5fa1
-description: Detects processes where the executable or image path contains common web root directories to identify potential webshells.
+title: Detect Suspicious Child Processes or Commands of SSH/SSHD
+id: da5fbf66-b903-48a5-b12e-4b80132d7e1a
+description: Detects suspicious child processes of SSH/SSHD or commands executed by SSH/SSHD which may indicate potential abuse using commonly abused Linux attack tools or networking binaries.
 status: experimental
-author: David Burkett, @signalblur
+author: David Burkett (@signalblur), @CraigHRowland
+references:
+    - https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt
+    - https://blog.qualys.com/vulnerabilities-threat-research/2024/07/01/regresshion-remote-unauthenticated-code-execution-vulnerability-in-openssh-server
 tags:
-    - attack.t1505.003
-date: 2024/06/28
+    - attack.t1190
 logsource:
     category: process_creation
     product: linux
 detection:
-    selection:
-        Image|contains:
-            - '/var/www/'
-            - '/usr/share/nginx/'
-            - '/srv/http/'
-            - '/home/*/public_html/'
-            - '/usr/local/nginx/'
-    condition: selection
-fields:
-    - Image
-    - CommandLine
+    selection_process:
+        ParentImage:
+            - '/usr/bin/ssh'
+            - '/usr/sbin/sshd'
+        Image:
+            - '/usr/bin/curl'
+            - '/usr/bin/wget'
+            - '/usr/bin/nmap'
+            - '/usr/bin/nc'
+            - '/usr/bin/socat'
+            - '/usr/bin/nc.traditional'
+            - '/usr/bin/nc.openbsd'
+            - '/usr/bin/openssl'
+            - '/usr/bin/nc6'
+            - '/usr/bin/msfconsole'
+    selection_commandline:
+        ParentImage:
+            - '/usr/bin/ssh'
+            - '/usr/sbin/sshd'
+        CommandLine|contains:
+            - 'nmap'
+            - 'chisel'
+            - 'zenmap'
+            - 'xenmap'
+            - 'john'
+            - 'hydra'
+            - 'sqlmap'
+            - 'dirbuster'
+            - 'nikto'
+            - 'gobuster'
+            - 'feroxbuster'
+            - 'masscan'
+            - 'metasploit'
+            - 'empire'
+    condition: selection_process or selection_commandline
 falsepositives:
-    - System administrators or developers running scripts or commands within web directories for legitimate purposes or as part of an applications functionality.
+    - Expected administrative activity
+    - Regular user behavior with legitimate use cases
 level: medium
