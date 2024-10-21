@@ -3,6 +3,8 @@
 ## Overview
 This repository contains Indicators of Compromise (IOCs) extracted from AWS honey credentials. These IOCs are part of a broader effort to monitor malicious activity that simulates AWS credentials being abused. The data collected includes source IP addresses, user agents, and event names associated with suspicious activity detected via the honey creds.
 
+This feed updates every 5 minutes.
+
 ## How It Works
 This repository is regularly updated with new IOCs collected from the AWS honey credentials. These honey tokens are designed to look like real AWS credentials but are purely for tracking and collecting intelligence on malicious actors who attempt to exploit them.
 
