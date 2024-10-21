@@ -1,0 +1,6 @@
+automation/bin/
+automation/bin64/
+automation/include/
+automation/lib/
+automation/lib64/
+automation/pyvenv.cfg
