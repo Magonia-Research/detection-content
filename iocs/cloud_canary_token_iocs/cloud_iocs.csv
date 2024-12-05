@@ -1,0 +1,6 @@
+src_ip,user_agent,event_name
+54.39.190.134,python-requests/2.32.3,GetCallerIdentity
+194.26.192.77,aws-sdk-go/1.48.15 (go1.21.5; linux; amd64),CreateSecurityGroup
+194.26.192.77,aws-sdk-go/1.48.15 (go1.21.5; linux; amd64),DescribeInstances
+194.26.192.77,aws-sdk-go/1.48.15 (go1.21.5; linux; amd64),CreateKeyPair
+94.101.115.35,AWSPowerShell.Common/4.1.534.0 ua/2.0 .NET_Core#6.0.5 OS/windows#10.0.17763.0 md/ARCH#X64 PowerShellCore/7.-1 cfg/retry-mode#legacy md/ClientAsync,DescribeRegions
