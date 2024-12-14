@@ -45,3 +45,9 @@ Below is a table illustrating the relationship between TLSH distance and false p
 This initiative focuses on tracking a wide array of open-source red teaming and pentesting tools, directly sourcing files and release artifacts from their official GitHub repositories. The hash data is continuously updated and made available to assist the cybersecurity community in detection and analysis efforts.
 
 By using TLSH, this project bridges the gap between traditional file hashing techniques and modern fuzzy matching capabilities, providing a powerful resource for security teams and researchers alike.
+
+---
+
+## Get Involved
+
+Contributions and feedback are welcome! If you have suggestions for additional tools to monitor or improvements to the feed, feel free to submit an issue or pull request on the project’s repository.
