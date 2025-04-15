@@ -36,7 +36,7 @@ The TLSH algorithm offers several key benefits for cybersecurity practitioners:
 
 Below is a table illustrating the relationship between TLSH distance and false positive rates, aiding practitioners in selecting appropriate thresholds for their use cases.
 
-![TLSH Fuzzy Hash FP Table](https://www.magonia.io/assets/images/TLSH-Score.png)
+![TLSH Fuzzy Hash FP Table](https://raw.githubusercontent.com/Magonia-Research/detection-content/refs/heads/main/iocs/tlsh/tlsh_fp.png)
 
 ---
 
